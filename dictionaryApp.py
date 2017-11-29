@@ -9,6 +9,8 @@ def get_definition(word):
         return data[word]
     elif word.title() in data: #.title() method returns a copy of the string in which first characters of all the words are capitalized
         return data[word.title()]
+    elif word.upper() in data: #.upper() returns a copy of the string in which all case-based characters have been uppercased
+        return data[word.upper()]
     elif len(get_close_matches(word, data.keys())) > 0:
         YN = input("Did you mean to type '%s'? Type y for yes or n for no: " % get_close_matches(word, data.keys())[0])
         YN = YN.lower()
